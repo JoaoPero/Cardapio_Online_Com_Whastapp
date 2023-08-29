@@ -364,7 +364,7 @@
           <div class="col-3 container-logo-footer">
             <img class="logo-footer" src="./assets/Image/logo.png" alt="" />
           </div>
-          <div class="col-6 container-texto-footer" style="">
+          <div class="col-6 container-texto-footer">
             <p class="mb-0"><b>Menu On-Line</b> &copy; Todos os direitos reservados</p>
           </div>
           <div class="col-3 container-redes-footer">
@@ -382,7 +382,7 @@
       </div>
     </footer>
 
-    <div class="modal-full" id="modalCarrinho">
+    <div class="modal-full hidden" id="modalCarrinho">
       <div class="m-header">
         <div class="container">
           <a href="#" class="btn btn-white btn-sm float-right">Fechar</a>
@@ -398,6 +398,7 @@
       </div>
       <div class="m-body">
         <div class="container">
+          <!-- Tela de itens do carrinho -->
           <div class="row ml-0 mr-0" id="itensCarrinho">
             <div class="col-12 item-carrinho">
               <div class="img-produto">
@@ -417,8 +418,126 @@
               </div>
             </div>
           </div>
-          <div class="row ml-0 mr-0 hidden" id="localEntrega"></div>
-          <div class="row ml-0 mr-0 hidden" id="resumoCarrinho"></div>
+          <!-- Tela de local de entrega -->
+          <div class="row ml-0 mr-0" id="localEntrega">
+            <div class="col-4">
+              <div class="form-group container-cep">
+                <label>CEP:</label>
+                <input id="txtCEP" type="text" class="form-control" />
+                <a class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+              </div>
+            </div>
+            <div class="col-8"></div>
+
+            <div class="col-6">
+              <div class="form-group container-endereco">
+                <label>Endereço:</label>
+                <input id="txtEndereco" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group container-endereco">
+                <label>Bairro:</label>
+                <input id="txtBairro" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group container-endereco">
+                <label>Número:</label>
+                <input id="txtNumero" type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group container-endereco">
+                <label>Cidade:</label>
+                <input id="txtCidade" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group container-endereco">
+                <label>Complemento:</label>
+                <input id="txtComplemento" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group container-endereco">
+                <label>Estado:</label>
+                <select id="ddlUf" class="form-control">
+                  <option value="-1">...</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Tela de resumo do carrinho -->
+          <div class="row ml-0 mr-0" id="resumoCarrinho">
+            <div class="col-12">
+              <p class="title-carrinho mt-4">
+                <b>Itens do carrinho:</b>
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="row" id="listaItensResumo">
+                <div class="col-12 item-carrinho resumo">
+                  <div class="img-produto-resumo">
+                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="" />
+                  </div>
+                  <div class="dados-produto">
+                    <p class="title-produto-resumo">
+                      <b>Nome do produto</b>
+                    </p>
+                    <p class="price-produto-resumo">
+                      <b>R$ 100,00</b>
+                    </p>
+                  </div>
+                  <p class="quantidade-produto-resumo">x <b>3</b></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <p class="title-carrinho mt-4">
+                <b>Local da entrega:</b>
+              </p>
+            </div>
+            <div class="col-12 item-carrinho resumo">
+              <div class="img-map">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="dados-produto">
+                <p class="texto-endereco">
+                  <b id="resumoEndereco">Rua Trabalho com Fraternidade, 155, Jardim Botafogo.</b>
+                </p>
+                <p class="cidade-endereco" id="cidadeEndereco">São Carlos - SP / 13575-848</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="m-footer">
@@ -448,6 +567,7 @@
     <script type="text/javascript" src="./assets/Javascript/modernizr-3.5.0.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/Javascript/dados.js"></script>
     <script type="text/javascript" src="./assets/Javascript/script.js"></script>
   </body>
 </html>
