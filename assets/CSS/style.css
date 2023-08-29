@@ -9,6 +9,7 @@
 :root {
   --color-background: #fffdf7;
   --color-black: #212121;
+  --color-black-heavy: #000;
   --color-text: #4f4f4f;
   --color-text-out: #90908e;
   --color-primary: #ffbf00;
@@ -23,8 +24,19 @@ body {
   font-family: "PoppinsRegular", "Rubik", sans-serif;
   color: var(--color-text);
 }
+.servicos,
+.cardapio,
+.depoimentos,
+.reserva {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
 b {
   font-family: "PoppinsMedium", "Rubik", sans-serif;
+}
+
+.hidden {
+  display: none !important;
 }
 .color-primary {
   color: var(--color-primary);
@@ -48,7 +60,7 @@ a.navbar-brand {
 .btn-white.active,
 .btn-white:hover {
   background-color: var(--color-primary);
-  color: var(--color-white) !important;
+  color: var(--color-black) !important;
 }
 .btn-icon {
   padding-right: 75px;
@@ -66,6 +78,7 @@ a.navbar-brand {
   padding-top: 6px;
   text-align: center;
 }
+
 .banner {
   padding: 50px 0px 200px 0px;
 }
@@ -93,6 +106,7 @@ a.navbar-brand {
 .btn-icon-left {
   padding-left: 70px;
 }
+
 .btn-icon-left span.icon-left {
   display: inline-block;
   color: var(--color-white);
@@ -106,6 +120,11 @@ a.navbar-brand {
   text-align: center;
   padding-top: 8px;
 }
+.btn-icon-left:hover span.icon-left {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
 .btn-sm {
   padding: 9px 15px !important;
   border-radius: 15px !important;
@@ -126,7 +145,6 @@ a.navbar-brand {
 }
 .img-banner {
   position: absolute;
-  width: 570px;
   top: 30px;
   right: 15px;
 }
@@ -188,4 +206,194 @@ a.navbar-brand {
   right: 0;
   height: 500px;
   background-image: url(../Image/bg-icons-2.png);
+}
+
+.background-cardapio {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background-image: url(../Image/bg-icons-1.png);
+}
+.container-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.card-item {
+  height: 350px;
+  /* padding: 0px; */
+}
+.card-item .img-produto img {
+  width: 100%;
+  border-radius: 11px;
+}
+.card-item .title-produto {
+  color: var(--color-black);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  height: 40px;
+  margin-bottom: 0px;
+}
+.card-item .price-produto {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+.card-item .add-carrinho {
+  display: none;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.btn-menos {
+  color: var(--color-black-heavy);
+  padding: 5px 7px;
+  border: 2px solid var(--color-black-heavy);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-mais {
+  color: var(--color-black-heavy);
+  padding: 5px 7px;
+  border: 2px solid var(--color-black-heavy);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-numero-itens {
+  font-size: 18px;
+  padding: 2.5px 15px;
+  color: var(--color-black-heavy);
+  border-top: 2px solid var(--color-black-heavy);
+  border-bottom: 2px solid var(--color-black-heavy);
+}
+
+.btn-add {
+  border: 2px solid var(--color-black-heavy);
+  font-size: 16px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  background-color: var(--color-black-heavy);
+  color: var(--color-white);
+  margin-left: 15px;
+}
+
+.card-item:hover {
+  background-color: var(--color-primary);
+}
+
+.card-item:hover .title-produto {
+  display: none;
+}
+
+.card-item:hover .add-carrinho {
+  display: flex;
+}
+
+.card-item:hover .price-produto {
+  margin-top: 20px;
+  color: var(--color-black-heavy);
+}
+
+.card-depoimentos {
+  height: 400px;
+  width: 400px;
+  border-radius: 120px;
+  background-color: var(--color-red);
+  position: absolute;
+  left: 0;
+}
+.container-dados-depoimento {
+  display: flex;
+}
+.depoimento {
+  margin-top: 70px;
+}
+.img-depoimento {
+  width: 80px;
+  height: 80px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: -10px 0px 15px -3px rgba(0, 0, 0, 0.8);
+}
+#depoimento-1 .img-depoimento {
+  background-image: url(../Image/diego.jpg);
+  background-size: cover;
+}
+#depoimento-2 .img-depoimento {
+  background-image: url(../Image/ana.jpg);
+  background-size: cover;
+}
+#depoimento-3 .img-depoimento {
+  background-image: url(../Image/joao.jpg);
+  background-size: cover;
+}
+.nome-depoimento {
+  color: var(--color-black);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.nota-depoimento {
+  color: var(--color-primary);
+}
+
+.nota-depoimento span {
+  color: var(--color-black);
+}
+
+.texto-depoimento {
+  display: flex;
+  font-size: 16px;
+  color: var(--color-black);
+}
+.texto-depoimento i {
+  font-size: 30px;
+  color: var(--color-primary);
+}
+
+.texto-depoimento i:first-child {
+  padding-left: 10px;
+  padding-right: 35px;
+}
+.texto-depoimento i:last-child {
+  padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.card-secondary {
+  background-color: var(--color-secondary);
+  border-radius: 70px;
+  padding: 90px;
+}
+.card-reserva {
+  width: 320px;
+  height: 320px;
+  border-radius: 120px;
+  background-color: var(--color-white);
+  position: absolute;
+  right: 0;
+  top: -25px;
+}
+
+.reserva .img-banner img {
+  width: 100%;
+}
+
+footer {
+  height: 100px;
+  background-color: var(--color-primary);
 }
