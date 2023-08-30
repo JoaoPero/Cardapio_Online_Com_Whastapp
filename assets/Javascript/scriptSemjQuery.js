@@ -12,44 +12,68 @@ cardapio.eventos = {
 };
 
 cardapio.metodos = {
-  obterItensCardapio2: function () {
+  obterItensCardapio2: function (categoria = "burgers", vermais = false) {
     let menuTipos = document.querySelectorAll(".menuTipos");
     let container = document.getElementById("itensCardapio");
-    let categoria = "burgers";
+    let btnVerMais = document.getElementById("btnVerMais");
     let filtro = MENU[categoria];
 
     //chama a função que renderiza os itens com a categoria padrão
-    renderItens(filtro);
+
+    renderItens(filtro, vermais);
 
     //ouvinte para categorias clicadas
     menuTipos.forEach((item) => {
       item.addEventListener("click", (event) => {
         let itemClicado = event.currentTarget.getAttribute("id");
         categoria = itemClicado;
-        console.log(categoria);
+        vermais = false;
 
         //remove a classe "active" de todos os itens
         menuTipos.forEach((menuItem) => {
           menuItem.classList.remove("active");
         });
 
-        container.innerHTML = ""; //limpa os dados anteriores antes de renderizar
+        if (!vermais) {
+          container.innerHTML = ""; //limpa os dados anteriores antes de renderizar
+        }
+
         item.classList.add("active"); //adiciona a classe "active" ao item clicado
         filtro = MENU[categoria];
 
-        renderItens(filtro);
+        renderItens(filtro, vermais);
       });
     });
 
-    //função para renderizar os itens na tela
-    function renderItens(filtro) {
-      filtro.forEach(function (item) {
-        let div = document.createElement("div");
-        div.className = "col-3 mb-5";
-        div.innerHTML = cardapio.templates.itensCardapio2(item.img, item.name, item.price);
+    //função para ouvir o botão ver mais
+    btnVerMais.addEventListener("click", () => {
+      vermais = true;
+      renderItens(filtro, vermais);
+    });
 
-        container.appendChild(div);
+    //função para renderizar os itens na tela
+    function renderItens(filtro, vermais) {
+      filtro.forEach(function (item, i) {
+        //renderiza os primeiros 8 itens na tela
+        if (!vermais && i < 8) {
+          let div = document.createElement("div");
+          div.className = "col-3 mb-5";
+          div.innerHTML = cardapio.templates.itensCardapio2(item.img, item.name, item.price);
+          container.appendChild(div);
+          //renderiza os promixos 4 itens na tela
+        } else if (vermais && i >= 8 && i < 12) {
+          let div = document.createElement("div");
+          div.className = "col-3 mb-5";
+          div.innerHTML = cardapio.templates.itensCardapio2(item.img, item.name, item.price);
+          container.appendChild(div);
+        }
       });
+
+      if (vermais) {
+        btnVerMais.classList.add("hidden"); //exibe o botão ver mais
+      } else {
+        btnVerMais.classList.remove("hidden"); //exibe o botão ver mais
+      }
     }
   },
 };

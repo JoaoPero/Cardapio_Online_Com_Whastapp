@@ -1,6 +1,5 @@
 $(document).ready(function () {
   cardapio.eventos.init();
-  cardapio.metodos.obterItensCardapio();
 });
 
 var cardapio = {};
@@ -8,50 +7,53 @@ var cardapio = {};
 cardapio.eventos = {
   init: () => {
     cardapio.metodos.obterItensCardapio();
-    cardapio.metodos.obterItensCardapio2();
     // console.log("iniciou");
   },
 };
 
 cardapio.metodos = {
   //obtem a lista de itens do cardapio
-  obterItensCardapio: (categoria = "pizzas") => {
+  obterItensCardapio: (categoria = "burgers", vermais = false) => {
     let filtro = MENU[categoria];
 
-    $("#itensCardapio").html("");
-    filtro.forEach((item) => {
-      // console.log("ForEach -> " + item.name);
-    });
+    //se for vermais, ele não limpa os itens anteriores da tela
+    if (!vermais) {
+      $("#itensCardapio").html("");
+      $("#btnVerMais").removeClass("hidden");
+    }
 
     $.each(filtro, (i, e) => {
       // console.log("jQuery -> " + filtro[i].name);
       let temp = cardapio.templates.itensCardapio
         .replace(/\${img}/g, e.img)
-        .replace(/\${nome}/g, e.name)
-        .replace(/\${preco}/g, e.price.toFixed(2).replace(".", ","));
+        .replace(/\${preco}/g, e.price.toFixed(2).replace(".", ","))
+        .replace(/\${nome}/g, e.name);
 
-      $("#itensCardapio").append(temp);
+      // botão ver mais foi clicado (12 itens)
+      if (vermais && i >= 8 && i < 12) {
+        $("#itensCardapio").append(temp);
+      }
+
+      // paginação inicial (8 itens)
+      if (!vermais && i < 8) {
+        $("#itensCardapio").append(temp);
+      }
     });
 
-    //remove o menu ativo
+    // remove o ativo
     $(".container-menu a").removeClass("active");
-    //seta o menu para ativo
+
+    // seta o menu para ativo
     $("#" + categoria).addClass("active");
-    console.log(categoria);
   },
 
-  //obtem a lista de itens do cardapio
-  obterItensCardapio2: function () {
-    let filtro = MENU["burgers"];
-    let container = document.getElementById("itensCardapio");
+  //clique no botão vermais
+  verMais: () => {
+    let ativo = $(".container-menu a.active").attr("id"); //burguers;
 
-    filtro.forEach(function (item) {
-      let div = document.createElement("div");
-      div.className = "col-3 mb-5";
-      div.innerHTML = cardapio.templates.itensCardapio2(item.img, item.name, item.price);
+    cardapio.metodos.obterItensCardapio(ativo, true);
 
-      container.appendChild(div);
-    });
+    $("#btnVerMais").addClass("hidden");
   },
 };
 
