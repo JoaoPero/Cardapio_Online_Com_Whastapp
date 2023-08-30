@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/CSS/fontawesome.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=" />
     <title>Restaurante - Seja bem-vindo!</title>
   </head>
   <body>
@@ -137,108 +138,28 @@
           </div>
 
           <div class="col-12 container-menu">
-            <a href="" class="btn btn-white btn-sm mr-3 active">
+            <a id="burgers" class="btn btn-white btn-sm mr-3 menuTipos active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
               <i class="fas fa-hamburger">&nbsp;Burguers</i>
             </a>
-            <a href="" class="btn btn-white btn-sm mr-3">
+            <a id="pizzas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
               <i class="fas fa-pizza-slice">&nbsp;Pizzas</i>
             </a>
-            <a href="" class="btn btn-white btn-sm mr-3">
+            <a id="churrasco" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
               <i class="fas fa-drumstick-bite">&nbsp;Churrasco</i>
             </a>
-            <a href="" class="btn btn-white btn-sm mr-3">
+            <a id="steaks" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('steaks')">
               <i class="fas fa-bacon">&nbsp;Steaks</i>
             </a>
-            <a href="" class="btn btn-white btn-sm mr-3">
+            <a id="bebidas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
               <i class="fas fa-cocktail">&nbsp;Bebidas</i>
             </a>
-            <a href="" class="btn btn-white btn-sm mr-3">
-              <i class="fas fa-ice-cream">&nbsp;Bebidas</i>
+            <a id="sobremesas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
+              <i class="fas fa-ice-cream">&nbsp;Sobremesas</i>
             </a>
           </div>
 
           <div class="col-12">
-            <div class="row" id="itensCardapio">
-              <div class="col-3 mb-5">
-                <div class="card card-item">
-                  <div class="img-produto">
-                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" />
-                  </div>
-                  <p class="title-produto text-center mt-4">
-                    <b> Burgãooooooooooooooooo</b>
-                  </p>
-                  <p class="price-produto text-center">
-                    <b> R$154,90</b>
-                  </p>
-                  <div class="add-carrinho text-center">
-                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                    <span class="btn-numero-itens">0</span>
-                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-3 mb-5">
-                <div class="card card-item">
-                  <div class="img-produto">
-                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" />
-                  </div>
-                  <p class="title-produto text-center mt-4">
-                    <b> Burgãooooooooooooooooo</b>
-                  </p>
-                  <p class="price-produto text-center">
-                    <b> R$154,90</b>
-                  </p>
-                  <div class="add-carrinho text-center">
-                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                    <span class="btn-numero-itens">0</span>
-                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-3 mb-5">
-                <div class="card card-item">
-                  <div class="img-produto">
-                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" />
-                  </div>
-                  <p class="title-produto text-center mt-4">
-                    <b> Burgãooooooooooooooooo</b>
-                  </p>
-                  <p class="price-produto text-center">
-                    <b> R$154,90</b>
-                  </p>
-                  <div class="add-carrinho text-center">
-                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                    <span class="btn-numero-itens">0</span>
-                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-3 mb-5">
-                <div class="card card-item">
-                  <div class="img-produto">
-                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" />
-                  </div>
-                  <p class="title-produto text-center mt-4">
-                    <b> Burgãooooooooooooooooo</b>
-                  </p>
-                  <p class="price-produto text-center">
-                    <b> R$154,90</b>
-                  </p>
-                  <div class="add-carrinho text-center">
-                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                    <span class="btn-numero-itens">0</span>
-                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="row" id="itensCardapio"></div>
           </div>
           <div class="col-12 text-center">
             <a href="#" class="btn btn-white btn-sm">Ver mais</a>
@@ -569,5 +490,6 @@
     <script type="text/javascript" src="./assets/Javascript/popper.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/dados.js"></script>
     <script type="text/javascript" src="./assets/Javascript/script.js"></script>
+    <!-- <script type="text/javascript" src="./assets/Javascript/scriptSemjQuery.js"></script> -->
   </body>
 </html>
