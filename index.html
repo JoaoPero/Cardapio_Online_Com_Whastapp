@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/CSS/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/CSS/fontawesome.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="icon" type="image/x-icon" href="data:;base64,iVBORw0KGgo=" />
     <title>Restaurante - Seja bem-vindo!</title>
   </head>
   <body>
@@ -90,52 +91,405 @@
       </div>
     </section>
     <section class="servicos" id="servicos">
-      <div class="background-servicos">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center mb-5">
-              <span class="hint-title"><b>Serviços</b></span>
-              <h1 class="title"><b>Como são nossos serviços?</b></h1>
+      <div class="background-servicos"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <span class="hint-title"><b>Serviços</b></span>
+            <h1 class="title"><b>Como são nossos serviços?</b></h1>
+          </div>
+          <div class="col-4">
+            <div class="card-icon text-center">
+              <img src="./assets/Image/icone-pedido.svg" width="150" />
             </div>
-            <div class="col-4">
-              <div class="card-icon text-center">
-                <img src="./assets/Image/icone-pedido.svg" width="150" />
+            <div class="card-text text-center">
+              <p><b>Fácil de pedir</b></p>
+              <span>Você só precisa de alguns passos para pedir sua comida.</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card-icon text-center">
+              <img src="./assets/Image/icone-delivery.svg" width="270" />
+            </div>
+            <div class="card-text text-center">
+              <p><b>Entrega rápida</b></p>
+              <span>Nossa entrega é sempre pontual, rápida e segura.</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card-icon text-center">
+              <img src="./assets/Image/icone-qualidade.svg" width="250" />
+            </div>
+            <div class="card-text text-center">
+              <p><b>Melhor qualidade</b></p>
+              <span>Não só a rapidez na entrega, a qualidade também é o nosso forte.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cardapio" id="cardapio">
+      <div class="container">
+        <div class="background-cardapio"></div>
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <span class="hint-title"><b>Cardápio</b></span>
+            <h1 class="title"><b>Conheça o nosso cardápio</b></h1>
+          </div>
+
+          <div class="col-12 container-menu">
+            <a id="burgers" class="btn btn-white btn-sm mr-3 menuTipos active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
+              <i class="fas fa-hamburger">&nbsp;Burguers</i>
+            </a>
+            <a id="pizzas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
+              <i class="fas fa-pizza-slice">&nbsp;Pizzas</i>
+            </a>
+            <a id="churrasco" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
+              <i class="fas fa-drumstick-bite">&nbsp;Churrasco</i>
+            </a>
+            <a id="steaks" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('steaks')">
+              <i class="fas fa-bacon">&nbsp;Steaks</i>
+            </a>
+            <a id="bebidas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
+              <i class="fas fa-cocktail">&nbsp;Bebidas</i>
+            </a>
+            <a id="sobremesas" class="btn btn-white btn-sm mr-3 menuTipos" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
+              <i class="fas fa-ice-cream">&nbsp;Sobremesas</i>
+            </a>
+          </div>
+
+          <div class="col-12">
+            <div class="row" id="itensCardapio"></div>
+          </div>
+          <div class="col-12 text-center">
+            <a href="#" class="btn btn-white btn-sm">Ver mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
+        <div class="row">
+          <div class="col-5 text-center">
+            <div class="card-depoimentos"></div>
+            <div class="d-flex img-banner">
+              <img src="./assets/Image/pizzas.png" alt="" />
+            </div>
+          </div>
+          <div class="col-7">
+            <span class="hint-title"><b>Depoimentos</b></span>
+            <h1 class="title"><b>O que dizem sobre nós?</b></h1>
+            <div class="mb-5">
+              <div class="depoimento" id="depoimento-1">
+                <div class="container-dados-depoimento">
+                  <div class="img-depoimento"></div>
+                  <div>
+                    <p class="nome-depoimento"><b>Diego Pereira</b></p>
+                    <p class="nota-depoimento">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>&nbsp;<span>4.5</span>
+                    </p>
+                  </div>
+                </div>
+                <p class="texto-depoimento">
+                  <i class="fas fa-quote-left"></i>
+                  <span>Muito bom, recomendo demais, comida muito bem feita pelo chefe, atendimento dentro dos paramentros e boa comunicação.</span>
+                  <i class="fas fa-quote-right"></i>
+                </p>
               </div>
-              <div class="card-text text-center">
-                <p><b>Fácil de pedir</b></p>
-                <span>Você só precisa de alguns passos para pedir sua comida.</span>
+              <div class="depoimento hidden" id="depoimento-2">
+                <div class="container-dados-depoimento">
+                  <div class="img-depoimento"></div>
+                  <div>
+                    <p class="nome-depoimento"><b>Ana Beatriz</b></p>
+                    <p class="nota-depoimento">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>&nbsp;<span>5.0</span>
+                    </p>
+                  </div>
+                </div>
+                <p class="texto-depoimento">
+                  <i class="fas fa-quote-left"></i>
+                  <span>Um jantar perfeito do começo ao im. Comida, experiência, serviço... Foi tão maravilhoso que fomos dois dias seguidos.</span>
+                  <i class="fas fa-quote-right"></i>
+                </p>
+              </div>
+              <div class="depoimento hidden" id="depoimento-3">
+                <div class="container-dados-depoimento">
+                  <div class="img-depoimento"></div>
+                  <div>
+                    <p class="nome-depoimento"><b>João Guilherme</b></p>
+                    <p class="nota-depoimento">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="far fa-star"></i>&nbsp;<span>4.0</span>
+                    </p>
+                  </div>
+                </div>
+                <p class="texto-depoimento">
+                  <i class="fas fa-quote-left"></i>
+                  <span
+                    >A comida estava estava excelente e o serviço gentil nos surpreendeu, dica: reserve umas ttrês hora pas ter uma melhor
+                    experiência.</span
+                  >
+                  <i class="fas fa-quote-right"></i>
+                </p>
               </div>
             </div>
-            <div class="col-4">
-              <div class="card-icon text-center">
-                <img src="./assets/Image/icone-delivery.svg" width="270" />
-              </div>
-              <div class="card-text text-center">
-                <p><b>Entrega rápida</b></p>
-                <span>Nossa entrega é sempre pontual, rápida e segura.</span>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card-icon text-center">
-                <img src="./assets/Image/icone-qualidade.svg" width="250" />
-              </div>
-              <div class="card-text text-center">
-                <p><b>Melhor qualidade</b></p>
-                <span>Não só a rapidez na entrega, a qualidade também é o nosso forte.</span>
+            <a class="btn btn-white btn-sm btn-social active mr-3">1</a>
+            <a class="btn btn-white btn-sm btn-social mr-3">2</a>
+            <a class="btn btn-white btn-sm btn-social">3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reserva" id="reservas">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card-secondary">
+              <div class="row">
+                <div class="col-7">
+                  <span class="hint-title"><b>Reserva</b></span>
+                  <h1 class="title"><b>Quer reserva um horário?</b></h1>
+                  <p class="pr-5">
+                    Mande uma mensagem clicando no botão abaixo
+                    <br />
+                    Reserve sua data e horário de forma simples e rápida.
+                  </p>
+                  <a href="#" class="btn btn-yellow mt-4"> Fazer reserva </a>
+                </div>
+                <div class="col-5">
+                  <div class="card-reserva"></div>
+                  <div class="d-flex img-banner">
+                    <img src="./assets/Image/icone-reserva.svg" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cardapio" id="cardapio"></section>
-    <section class="depoimentos" id="depoimentos"></section>
-    <section class="reserva" id="reservas"></section>
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-3 container-logo-footer">
+            <img class="logo-footer" src="./assets/Image/logo.png" alt="" />
+          </div>
+          <div class="col-6 container-texto-footer">
+            <p class="mb-0"><b>Menu On-Line</b> &copy; Todos os direitos reservados</p>
+          </div>
+          <div class="col-3 container-redes-footer">
+            <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-sm btn-white btn-social mr-3">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal-full hidden" id="modalCarrinho">
+      <div class="m-header">
+        <div class="container">
+          <a href="#" class="btn btn-white btn-sm float-right">Fechar</a>
+          <div class="etapas">
+            <div class="etapa etapa1 active">1</div>
+            <div class="etapa etapa2">2</div>
+            <div class="etapa etapa3">3</div>
+          </div>
+          <p class="title-carrinho mt-4">
+            <b id="lblTituloEtapa">Seu carrinho:</b>
+          </p>
+        </div>
+      </div>
+      <div class="m-body">
+        <div class="container">
+          <!-- Tela de itens do carrinho -->
+          <div class="row ml-0 mr-0" id="itensCarrinho">
+            <div class="col-12 item-carrinho">
+              <div class="img-produto">
+                <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="" />
+              </div>
+              <div class="dados-produto">
+                <p class="title-produto">
+                  <b>Nome do produto</b>
+                </p>
+                <p class="price-produto"><b>R$149,90</b></p>
+              </div>
+              <div class="add-carrinho text-center">
+                <span class="btn-menos"><i class="fas fa-minus"></i></span>
+                <span class="btn-numero-itens">2</span>
+                <span class="btn-mais"><i class="fas fa-plus"></i></span>
+                <span class="btn btn-remove"><i class="fa fa-times"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- Tela de local de entrega -->
+          <div class="row ml-0 mr-0" id="localEntrega">
+            <div class="col-4">
+              <div class="form-group container-cep">
+                <label>CEP:</label>
+                <input id="txtCEP" type="text" class="form-control" />
+                <a class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+              </div>
+            </div>
+            <div class="col-8"></div>
+
+            <div class="col-6">
+              <div class="form-group container-endereco">
+                <label>Endereço:</label>
+                <input id="txtEndereco" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group container-endereco">
+                <label>Bairro:</label>
+                <input id="txtBairro" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group container-endereco">
+                <label>Número:</label>
+                <input id="txtNumero" type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="form-group container-endereco">
+                <label>Cidade:</label>
+                <input id="txtCidade" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group container-endereco">
+                <label>Complemento:</label>
+                <input id="txtComplemento" type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group container-endereco">
+                <label>Estado:</label>
+                <select id="ddlUf" class="form-control">
+                  <option value="-1">...</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MT">MT</option>
+                  <option value="MS">MS</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Tela de resumo do carrinho -->
+          <div class="row ml-0 mr-0" id="resumoCarrinho">
+            <div class="col-12">
+              <p class="title-carrinho mt-4">
+                <b>Itens do carrinho:</b>
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="row" id="listaItensResumo">
+                <div class="col-12 item-carrinho resumo">
+                  <div class="img-produto-resumo">
+                    <img src="./assets/Image/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="" />
+                  </div>
+                  <div class="dados-produto">
+                    <p class="title-produto-resumo">
+                      <b>Nome do produto</b>
+                    </p>
+                    <p class="price-produto-resumo">
+                      <b>R$ 100,00</b>
+                    </p>
+                  </div>
+                  <p class="quantidade-produto-resumo">x <b>3</b></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <p class="title-carrinho mt-4">
+                <b>Local da entrega:</b>
+              </p>
+            </div>
+            <div class="col-12 item-carrinho resumo">
+              <div class="img-map">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="dados-produto">
+                <p class="texto-endereco">
+                  <b id="resumoEndereco">Rua Trabalho com Fraternidade, 155, Jardim Botafogo.</b>
+                </p>
+                <p class="cidade-endereco" id="cidadeEndereco">São Carlos - SP / 13575-848</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-footer">
+        <div class="container">
+          <div class="container-total text-right mb-4">
+            <p class="mb-10">
+              <span> Subtotal: </span>
+              <span id="lblSubtotal">R$95,00</span>
+            </p>
+            <p class="mb-10 texto-entrega">
+              <span> <i class="fas fa-motorcycle"></i>&nbsp;Entrega:</span>
+              <span id="lblValorEntrega">+ R$5,00</span>
+            </p>
+            <p class="mb-10 texto-total">
+              <span> <b>Total:</b> </span>
+              <span class="valor-total" id="lblValorTotal"><b>R$100,00</b></span>
+            </p>
+          </div>
+          <a class="btn btn-white float-right hidden" id="btnVoltar">Voltar</a>
+          <a class="btn btn-yellow float-right hidden" id="btnEtapaPedido">Enviar pedido</a>
+          <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">Revisar pedido</a>
+          <a class="btn btn-yellow float-right" id="btnEtapaPedido">Continuar</a>
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="./assets/Javascript/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/modernizr-3.5.0.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="./assets/Javascript/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/Javascript/dados.js"></script>
     <script type="text/javascript" src="./assets/Javascript/script.js"></script>
+    <!-- <script type="text/javascript" src="./assets/Javascript/scriptSemjQuery.js"></script> -->
   </body>
 </html>
