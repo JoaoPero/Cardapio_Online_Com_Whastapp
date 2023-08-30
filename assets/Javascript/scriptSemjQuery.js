@@ -76,6 +76,9 @@ cardapio.metodos = {
       }
     }
   },
+  diminuirQuantidade: (id) => {},
+  aumentarQuantidade: (id) => {},
+  adicionarAoCarrinho: (id) => {},
 };
 
 cardapio.templates = {
